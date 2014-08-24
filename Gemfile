@@ -1,10 +1,11 @@
 source "https://rubygems.org"
 
+gem 'vagrant', github: "mitchellh/vagrant", tag: 'v1.6.3'
 gem "chef"
 gem "knife-solo"
-gem "berkshelf"
+gem "librarian-chef"
 
 group :plugins do
-  gem "vagrant-berkshelf"
+  gem "vagrant-librarian-chef"
   gem "vagrant-omnibus"
 end

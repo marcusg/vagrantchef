@@ -12,6 +12,13 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "http://files.vagrantup.com/precise64.box"
 
+  config.librarian_chef.enabled = true
+
+  config.vm.provision :chef_solo do |chef|
+    chef.add_recipe "apache2"
+    chef.json = { :apache => { :default_site_enabled => true } }
+  end
+
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
   # `vagrant box outdated`. This is not recommended.
