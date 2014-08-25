@@ -27,6 +27,7 @@ SITE
       yum (~> 3.0)
 
 DEPENDENCIES
+  build-essential (~> 2.0.6)
   nginx (~> 2.7.4)
   rvm (~> 0.9.2)
   user (~> 0.3.0)
