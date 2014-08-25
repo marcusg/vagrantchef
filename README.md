@@ -10,9 +10,12 @@ repo to test vagrant with chef
 ## Start
 
     bundle install
-    librarian-chef install
+    bundle exec librarian-chef install
+
+    vagrant plugin install vagrant-librarian-chef
+		vagrant plugin install vagrant-omnibus
     vagrant up
 
 ## Changes
 
-    knife solo cook root@192.168.33.10 nodes/base.json
+    bundle exec knife solo cook root@192.168.33.10 nodes/base.json
