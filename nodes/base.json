@@ -1,0 +1,10 @@
+{
+  "nginx": {
+    "default_site_enabled": true
+  },
+  "users": "deploy",
+  "run_list": [
+    "recipe[user::data_bag]",
+    "recipe[nginx]"
+  ]
+}
