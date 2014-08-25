@@ -11,6 +11,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "http://files.vagrantup.com/precise64.box"
+  config.vm.boot_timeout = 120
+
+  config.omnibus.chef_version = :latest
 
   config.ssh.insert_key = true
   config.ssh.forward_agent = true
@@ -20,6 +23,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     chef.cookbooks_path = ["site-cookbooks", "cookbooks"]
     chef.roles_path = "roles"
     chef.data_bags_path = "data_bags"
+    chef.run_list = "role[base]" # NOTE: initialize vm with basic run list
   end
 
   # Disable automatic box update checking. If you disable this, then
