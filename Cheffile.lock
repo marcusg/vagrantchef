@@ -21,14 +21,19 @@ SITE
       yum-epel (>= 0.0.0)
     rvm (0.9.2)
       chef_gem (>= 0.0.0)
+    ssh-keys (1.0.0)
+    sudo (2.7.0)
     user (0.3.0)
     yum (3.2.4)
     yum-epel (0.4.0)
       yum (~> 3.0)
 
 DEPENDENCIES
+  apt (~> 2.5.3)
   build-essential (~> 2.0.6)
   nginx (~> 2.7.4)
   rvm (~> 0.9.2)
+  ssh-keys (~> 1.0.0)
+  sudo (~> 2.7.0)
   user (~> 0.3.0)
 

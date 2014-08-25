@@ -13,6 +13,12 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.vm.box = "http://files.vagrantup.com/precise64.box"
   config.vm.boot_timeout = 120
 
+  config.vm.provider :virtualbox do |vb|
+    vb.gui = false
+    vb.name = "base_box"
+    vb.customize ["modifyvm", :id, "--memory", "1024"]
+  end
+
   config.omnibus.chef_version = :latest
 
   config.ssh.insert_key = true

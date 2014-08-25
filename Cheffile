@@ -1,5 +1,8 @@
 site 'https://supermarket.getchef.com/api/v1'
 
+cookbook 'apt', '~> 2.5.3'
+cookbook 'sudo', '~> 2.7.0'
+cookbook 'ssh-keys', '~> 1.0.0'
 cookbook 'build-essential', '~> 2.0.6'
 cookbook 'user', '~> 0.3.0'
 cookbook 'nginx', '~> 2.7.4'
