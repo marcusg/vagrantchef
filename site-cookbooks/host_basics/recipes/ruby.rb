@@ -4,8 +4,5 @@ node.default['rvm']['user_installs'] = [
     'rubies'        => ['2.1.2']
   }
 ]
-node.default['rvm']["rvmrc"] = {
-  "rvm_autolibs_flag" => "disabled"
-}
 
 include_recipe "rvm::user"
