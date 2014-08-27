@@ -10,6 +10,8 @@ Vagrant.configure("2") do |config|
 
   config.ssh.forward_agent = true
 
+  config.vm.network "forwarded_port", guest: 80, host: 8080
+
   # NOTE: adjust path to public ssh key file!
   config.vm.provision "shell", inline: "echo '#{`cat ~/.ssh/id_rsa.pub`}' >> /home/vagrant/.ssh/authorized_keys"
 
