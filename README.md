@@ -7,15 +7,23 @@ repo to test vagrant with chef
 - virtualbox
 - bsdtar (on newer virtualbox versions)
 
-## Start
+## Build box
 
     bundle install
-    bundle exec librarian-chef install
-
-    vagrant plugin install vagrant-librarian-chef
-		vagrant plugin install vagrant-omnibus
     vagrant up
 
-## Changes
+## Prepare box
 
-    bundle exec knife solo cook root@192.168.33.10 nodes/base.json
+    bundle exec knife solo prepare vagrant@192.168.33.10
+
+## Run recipes
+
+    bundle exec knife solo cook vagrant@192.168.33.10 nodes/base.json
+
+## Disable Host key verification
+
+put in `~/.ssh/config`
+
+    Host 192.168.33.*
+      StrictHostKeyChecking no
+      UserKnownHostsFile=/dev/null
