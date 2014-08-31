@@ -1,4 +1,4 @@
-name 'host_basics'
+name 'host_base'
 
 depends "apt"
 depends "user"
