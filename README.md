@@ -22,6 +22,12 @@ repo to test vagrant with chef
     bundle exec knife solo prepare vagrant@192.168.33.10
     bundle exec knife solo cook vagrant@192.168.33.10 nodes/base.json
 
+### Tests
+
+Run tests against vagrant instance (run `prepare` and `cook` commands before)
+
+		rspec
+
 ### Disable Host key verification
 
 put in `~/.ssh/config`
